@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Programação - 3º Bimestre</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f8;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .lista {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+        input[type="number"], input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .resultado {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ecf0f1;
+        }
+        @media (max-width: 600px) {
+            input[type="number"], input[type="text"], button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalho de Programação - 3º Bimestre</h1>
+    <h2>Participantes: Gabriel Almeida e Gabriel Crispim</h2>
+
+    <div class="lista">
+        <h2>Lista 1</h2>
+        
+        <h3>Soma de Números</h3>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <input type="number" id="num3" placeholder="Número 3">
+        <input type="number" id="num4" placeholder="Número 4">
+        <input type="number" id="num5" placeholder="Número 5">
+        <button onclick="calcularSoma()">Calcular Soma</button>
+        <div id="resultadoSoma" class="resultado"></div>
+
+        <h3>Palavras em Ordem Alfabética</h3>
+        <input type="text" id="palavra1" placeholder="Palavra 1">
+        <input type="text" id="palavra2" placeholder="Palavra 2">
+        <input type="text" id="palavra3" placeholder="Palavra 3">
+        <input type="text" id="palavra4" placeholder="Palavra 4">
+        <button onclick="ordenarPalavras()">Ordenar Palavras</button>
+        <div id="resultadoPalavras" class="resultado"></div>
+
+        <h3>Números em Ordem Decrescente</h3>
+        <input type="number" id="num1Dec" placeholder="Número 1">
+        <input type="number" id="num2Dec" placeholder="Número 2">
+        <input type="number" id="num3Dec" placeholder="Número 3">
+        <input type="number" id="num4Dec" placeholder="Número 4">
+        <input type="number" id="num5Dec" placeholder="Número 5">
+        <button onclick="ordenarDecrescente()">Ordenar Decrescente</button>
+        <div id="resultadoDecrescente" class="resultado"></div>
+
+        <h3>Quantidade de Caracteres do Maior Elemento</h3>
+        <input type="text" id="palavra1Maior" placeholder="Palavra 1">
+        <input type="text" id="palavra2Maior" placeholder="Palavra 2">
+        <input type="text" id="palavra3Maior" placeholder="Palavra 3">
+        <input type="text" id="palavra4Maior" placeholder="Palavra 4">
+        <input type="text" id="palavra5Maior" placeholder="Palavra 5">
+        <button onclick="maiorElemento()">Encontrar Maior</button>
+        <div id="resultadoMaior" class="resultado"></div>
+
+        <h3>Concatenação de Vetores</h3>
+        <input type="text" id="vetor1" placeholder="Elementos do Vetor 1 (separados por vírgula)">
+        <input type="text" id="vetor2" placeholder="Elementos do Vetor 2 (separados por vírgula)">
+        <input type="text" id="vetor3" placeholder="Elementos do Vetor 3 (separados por vírgula)">
+        <button onclick="concatenarVetores()">Concatenar Vetores</button>
+        <div id="resultadoVetores" class="resultado"></div>
+
+        <h3>Maior ou Menor Valor</h3>
+        <input type="number" id="num1Valor" placeholder="Número 1">
+        <input type="number" id="num2Valor" placeholder="Número 2">
+        <input type="number" id="num3Valor" placeholder="Número 3">
+        <button onclick="verificarSoma()">Verificar Valor</button>
+        <div id="resultadoValor" class="resultado"></div>
+    </div>
+
+    <div class="lista">
+        <h2>Lista 2</h2>
+        
+        <h3>Entrada e Saída de Matrizes</h3>
+        <h3>Valores da Matriz (3x3)</h3>
+        <div>
+            <input type="number" id="matriz1" placeholder="Elemento 1">
+            <input type="number" id="matriz2" placeholder="Elemento 2">
+            <input type="number" id="matriz3" placeholder="Elemento 3">
+            <input type="number" id="matriz4" placeholder="Elemento 4">
+            <input type="number" id="matriz5" placeholder="Elemento 5">
+            <input type="number" id="matriz6" placeholder="Elemento 6">
+            <input type="number" id="matriz7" placeholder="Elemento 7">
+            <input type="number" id="matriz8" placeholder="Elemento 8">
+            <input type="number" id="matriz9" placeholder="Elemento 9">
+            <button onclick="mostrarMatriz()">Mostrar Matriz</button>
+            <div id="resultadoMatrizEntrada" class="resultado"></div>
+        </div>
+
+        <h3>Matriz Multiplicada</h3>
+        <div>
+            <input type="number" class="matriz2" placeholder="Elemento 1">
+            <input type="number" class="matriz2" placeholder="Elemento 2">
+            <input type="number" class="matriz2" placeholder="Elemento 3">
+            <input type="number" class="matriz2" placeholder="Elemento 4">
+            <input type="number" class="matriz2" placeholder="Elemento 5">
+            <input type="number" class="matriz2" placeholder="Elemento 6">
+            <input type="number" class="matriz2" placeholder="Elemento 7">
+            <input type="number" class="matriz2" placeholder="Elemento 8">
+            <input type="number" class="matriz2" placeholder="Elemento 9">
+            <input type="number" id="expan" placeholder="Multiplicador">
+            <button id="processButton">Processar</button>
+            <h2>Resultado:</h2>
+            <pre id="result" class="resultado"></pre>
+        </div>
+
+        <h3>Maior Valor na Matriz</h3>
+        <h3>Valores da Matriz (3x3)</h3>
+        <div>
+            <input type="number" id="matrizMaior1" placeholder="Elemento 1">
+            <input type="number" id="matrizMaior2" placeholder="Elemento 2">
+            <input type="number" id="matrizMaior3" placeholder="Elemento 3">
+            <input type="number" id="matrizMaior4" placeholder="Elemento 4">
+            <input type="number" id="matrizMaior5" placeholder="Elemento 5">
+            <input type="number" id="matrizMaior6" placeholder="Elemento 6">
+            <input type="number" id="matrizMaior7" placeholder="Elemento 7">
+            <input type="number" id="matrizMaior8" placeholder="Elemento 8">
+            <input type="number" id="matrizMaior9" placeholder="Elemento 9">
+            <button onclick="mostrarMaiorValorMatriz()">Mostrar Maior Valor</button>
+            <div id="resultadoMaiorMatriz" class="resultado"></div>
+        </div>
+
+        <h3>Valores e Tipos na Matriz</h3>
+        <h3>Valores da Matriz (3x3)</h3>
+        <div>
+            <input type="number" id="matrizTipos1" placeholder="Elemento 1">
+            <input type="number" id="matrizTipos2" placeholder="Elemento 2">
+            <input type="number" id="matrizTipos3" placeholder="Elemento 3">
+            <input type="number" id="matrizTipos4" placeholder="Elemento 4">
+            <input type="number" id="matrizTipos5" placeholder="Elemento 5">
+            <input type="number" id="matrizTipos6" placeholder="Elemento 6">
+            <input type="number" id="matrizTipos7" placeholder="Elemento 7">
+            <input type="number" id="matrizTipos8" placeholder="Elemento 8">
+            <input type="number" id="matrizTipos9" placeholder="Elemento 9">
+            <button onclick="mostrarValoresTipos()">Mostrar Valores e Tipos</button>
+            <div id="resultadoValoresTipos" class="resultado"></div>
+        </div>
+    </div>
+
+    <script>
+        function calcularSoma() {
+            const soma = [num1, num2, num3, num4, num5].reduce((acc, curr) => acc + Number(curr.value), 0);
+            document.getElementById('resultadoSoma').innerText = `Soma: ${soma}`;
+        }
+
+        function ordenarPalavras() {
+            const palavras = [palavra1, palavra2, palavra3, palavra4].map(p => p.value);
+            const ordenadas = palavras.sort();
+            document.getElementById('resultadoPalavras').innerText = `Palavras em Ordem Alfabética: ${ordenadas.join(', ')}`;
+        }
+
+        function ordenarDecrescente() {
+            const numeros = [num1Dec, num2Dec, num3Dec, num4Dec, num5Dec].map(n => Number(n.value));
+            const ordenados = numeros.sort((a, b) => b - a);
+            document.getElementById('resultadoDecrescente').innerText = `Números em Ordem Decrescente: ${ordenados.join(', ')}`;
+        }
+
+        function maiorElemento() {
+            const palavras = [palavra1Maior, palavra2Maior, palavra3Maior, palavra4Maior, palavra5Maior].map(p => p.value);
+            const maior = palavras.reduce((a, b) => a.length >= b.length ? a : b);
+            document.getElementById('resultadoMaior').innerText = `Maior Elemento: ${maior} (${maior.length} caracteres)`;
+        }
+
+        function concatenarVetores() {
+            const vetor1 = document.getElementById('vetor1').value.split(',');
+            const vetor2 = document.getElementById('vetor2').value.split(',');
+            const vetor3 = document.getElementById('vetor3').value.split(',');
+            const resultado = vetor1.concat(vetor2, vetor3);
+            document.getElementById('resultadoVetores').innerText = `Vetores Concatenados: ${resultado.join(', ')}`;
+        }
+
+        function verificarSoma() {
+            const num1Valor = Number(document.getElementById('num1Valor').value);
+            const num2Valor = Number(document.getElementById('num2Valor').value);
+            const num3Valor = Number(document.getElementById('num3Valor').value);
+            const soma = num1Valor + num2Valor;
+            const resultado = soma > num3Valor ? "Maior" : "Menor ou Igual";
+            document.getElementById('resultadoValor').innerText = `Resultado: ${resultado}`;
+        }
+
+        function mostrarMatriz() {
+            const matriz = [
+                [Number(document.getElementById('matriz1').value), Number(document.getElementById('matriz2').value), Number(document.getElementById('matriz3').value)],
+                [Number(document.getElementById('matriz4').value), Number(document.getElementById('matriz5').value), Number(document.getElementById('matriz6').value)],
+                [Number(document.getElementById('matriz7').value), Number(document.getElementById('matriz8').value), Number(document.getElementById('matriz9').value)]
+            ];
+            
+            const entradaFormatada = matriz.map(show => show.join(" | ")).join("<br>");
+            document.getElementById('resultadoMatrizEntrada').innerHTML = `Matriz Entrante:<br>${entradaFormatada}`;
+            const somaValores = matriz.flat().reduce((acc, lan) => acc + lan, 0);
+            document.getElementById('resultadoMatrizEntrada').innerHTML += `<br>Soma de todos os valores: ${somaValores}`;
+        }
+
+        document.getElementById('processButton').addEventListener('click', () => {
+            const ENTRADA = document.querySelectorAll('.matriz2');
+            const MATRIZ = [];
+            for (let i = 0; i < 3; i++) {
+                MATRIZ[i] = [];
+                for (let j = 0; j < 3; j++) {
+                    MATRIZ[i][j] = Number(ENTRADA[i * 3 + j].value);
+                }
+            }
+            const VM = Number(document.getElementById('expan').value);
+            const MULTI = (matriz, balancer) => {
+                return matriz.map(show => show.map(value => value * balancer));
+            };
+            const RESULT = MULTI(MATRIZ, VM);
+            const FINAL = document.getElementById('result');
+            FINAL.textContent = `Matriz Multiplicada:\n${RESULT.map(show => show.join(' | ')).join('\n')}`;
+        });
+
+        function mostrarMaiorValorMatriz() {
+            const matriz = [
+                [Number(document.getElementById('matrizMaior1').value), Number(document.getElementById('matrizMaior2').value), Number(document.getElementById('matrizMaior3').value)],
+                [Number(document.getElementById('matrizMaior4').value), Number(document.getElementById('matrizMaior5').value), Number(document.getElementById('matrizMaior6').value)],
+                [Number(document.getElementById('matrizMaior7').value), Number(document.getElementById('matrizMaior8').value), Number(document.getElementById('matrizMaior9').value)]
+            ];
+            
+            const maiorEntradaFormatada = matriz.map(line => line.join(' | ')).join("<br>");
+            document.getElementById('resultadoMaiorMatriz').innerHTML = `Matriz Original:<br>${maiorEntradaFormatada}`;
+            const ALL = matriz.flat();
+            const MAX = Math.max(...ALL); 
+            document.getElementById('resultadoMaiorMatriz').innerHTML += `<br>Maior Valor: ${MAX}`;
+        }
+
+        function mostrarValoresTipos() {
+            const matriz = [
+                [Number(document.getElementById('matrizTipos1').value), Number(document.getElementById('matrizTipos2').value), Number(document.getElementById('matrizTipos3').value)],
+                [Number(document.getElementById('matrizTipos4').value), Number(document.getElementById('matrizTipos5').value), Number(document.getElementById('matrizTipos6').value)],
+                [Number(document.getElementById('matrizTipos7').value), Number(document.getElementById('matrizTipos8').value), Number(document.getElementById('matrizTipos9').value)]
+            ];
+
+            let tiposResultado = 'Valores e seus tipos:<br>';
+            matriz.forEach((show, Index) => {
+                show.forEach((value, showIndex) => {
+                    const type = isNaN(value) ? 'string' : 'number';
+                    tiposResultado += `Valor na posição [${Index}][${showIndex}]: ${value} (Tipo: ${type})<br>`;
+                });
+            });
+            document.getElementById('resultadoValoresTipos').innerHTML = tiposResultado;
+        }
+    </script>
+</body>
+</html>
